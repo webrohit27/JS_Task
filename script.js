@@ -38,13 +38,13 @@ function updateTable() {
     });
 }
 
-// Function to sort the table based on column index
+// sort the table based on column index
 function sortTable(colIndex, ascending = true) {
     chemicals.sort((a, b) => {
         let valueA = a[colIndex];
         let valueB = b[colIndex];
 
-        // Handle numeric values
+      
         if (!isNaN(valueA) && !isNaN(valueB)) {
             valueA = parseFloat(valueA);
             valueB = parseFloat(valueB);
@@ -58,7 +58,7 @@ function sortTable(colIndex, ascending = true) {
     updateTable();
 }
 
-// Function to add a new chemical
+// add a new chemical
 function addChemical() {
     const newId = Math.max(...chemicals.map(c => c.id)) + 1;
     chemicals.push({
@@ -75,7 +75,7 @@ function addChemical() {
     updateTable();
 }
 
-// Function to edit a chemical
+//  edit a chemical
 function editChemical(id) {
     const chemical = chemicals.find(c => c.id === id);
 
