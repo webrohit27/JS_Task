@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Inventory Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <h1>Chemical Inventory Management</h1>
+        <div class="toolbar">
+            <button id="addRowBtn"><i class="fa-sharp fa-solid fa-circle-plus"></i></button>
+            <button id="moveDownBtn"><i class="fa-solid fa-arrow-down"></i></button>
+            <button id="moveUpBtn"><i class="fa-solid fa-arrow-up"></i></button> 
+            <button id="deleteRowBtn"><i class="fa-solid fa-trash"></i></button>
+            <button id="refreshBtn"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+            <button id="saveBtn"><i class="fa-solid fa-floppy-disk"></i></button>
+        </div>
+        <table id="chemicalTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Chemical Name</th>
+                    <th>Vendor</th>
+                    <th>Density (g/m2)</th>
+                    <th>Viscosity (m/s2)</th>
+                    <th>Packaging</th>
+                    <th>Pack Size</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Table rows will be dynamically added here via javacript-->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal for editing chemical data -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Chemical Data</h2>
+            <form id="editForm">
+                <label>ID:</label>
+                <input type="number" name="id" readonly><br>
+                <label>Name:</label>
+                <input type="text" name="name"><br>
+                <label>Vendor:</label>
+                <input type="text" name="vendor"><br>
+                <label>Density:</label>
+                <input type="number" name="density"><br>
+                <label>Viscosity:</label>
+                <input type="number" name="viscosity"><br>
+                <label>Packaging:</label>
+                <input type="text" name="packaging"><br>
+                <label>Pack Size:</label>
+                <input type="text" name="packSize"><br>
+                <label>Unit:</label>
+                <input type="text" name="unit"><br>
+                <label>Quantity:</label>
+                <input type="number" name="quantity"><br>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
